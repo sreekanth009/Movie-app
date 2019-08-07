@@ -1,0 +1,108 @@
+body {
+  font-family: sans-serif;
+}
+
+.MuiContainer-root {
+  @media only screen and (max-width: 767px) {
+    padding: 0 !important;
+  }
+}
+
+.movie-thumbnail-block {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.movie-details {
+  margin-top: 85px;
+  @media only screen and (max-width: 959px) {
+    margin-top: 20px;
+  }
+  .movie-title {
+    h3 {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+}
+
+.button-group {
+  button {
+    color: #fff;
+    margin-right: 10px;
+    text-transform: capitalize;
+    &.play {
+      background: #4caf50;
+    }
+    &.watch-later {
+      background: #007bff;
+    }
+  }
+}
+
+/***** Movie details block *****/
+.movie-details-block {
+  margin: 20px 0;
+  .movie-synopsis, .movie-banner {
+    padding: 10px;
+  }
+  .movie-synopsis{
+    p {
+      width: 90%;
+      text-align: justify;
+      line-height: 1.5;
+    }
+  }
+  .movie-banner {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/***** Movie list block *****/
+.related-movie-block {
+  margin-top: 50px;
+  h3 {
+    padding: 0 10px;
+  }
+  .MuiGrid-item {
+    padding: 0 10px;
+  }
+  .related-movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    .related-movie-list {
+      display: flex; 
+      padding: 0.5em;
+      width: 100%;
+    }
+  }
+}
+.related-movie-card {
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  @media only screen and (max-width: 767px) {
+    padding: 10px;
+  }
+  .MuiCardContent-root {
+    padding: 15px 0;
+    text-align: left;
+  }
+  img {
+    min-height: 200px;
+  }
+  button {
+    color: #fff;
+    &.play {
+      background: #4caf50;
+    }
+  }
+}
+
