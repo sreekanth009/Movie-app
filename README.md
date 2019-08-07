@@ -1,5 +1,5 @@
 # Movie-app
-Movies information and related movies list
+A simple application for movies information and details using NEXT.js
  
 ## Steps for local setup
 
