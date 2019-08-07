@@ -28,6 +28,17 @@ body {
       display: inline-block;
       margin-right: 15px;
     }
+    button.favorite {
+      border: 0;
+      vertical-align: middle;
+      &:focus {
+        outline: 0;
+      }
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
 

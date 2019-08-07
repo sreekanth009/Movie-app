@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import styles from '../styles/app.scss';
-// import CardMedia from '@material-ui/core/CardMedia';
 
 const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -15,10 +14,17 @@ const posRelative = {
   position: 'relative',
 }
 
-const Index = props => (
-  console.log('data', props.data),
-  console.log('dataList', props.dataList.results),
+const handleClick = () => {
+  const image = document.getElementById('favImg');
+  if (image.src.match('star.png')) {
+    image.src = '../static/star-filled.png';
+  }
+  else {
+    image.src = '../static/star.png';
+  }
+}
 
+const Index = props => (
   <Container fixed className={'contaier'}>
 
     <Grid container spacing={3} className={'movie-thumbnail-block'}>
@@ -31,7 +37,9 @@ const Index = props => (
         <div className={'movie-details'}>
           <div className={'movie-title'}>
             <h3>{props.data.title}</h3>
-            <button>star</button>
+            <button className={'favorite'} onClick={handleClick}>
+              <img id={'favImg'} src={'../static/star.png'} alt={'star'} />
+            </button>
           </div>
           <div className={'button-group'}>
             <Button variant="contained" className={'play'}>
@@ -64,9 +72,9 @@ const Index = props => (
       <h3>Related Videos</h3>
       <Grid container className={'related-movie-grid'}>
         {
-          props.dataList.results.map((item) => {
+          props.dataList.results.map((item, i) => {
             return (
-              <Grid item xs={12} sm={6} md={3} className={'related-movie-list'}>
+              <Grid item xs={12} sm={6} md={3} className={'related-movie-list'} key={i}>
                 <Card className={'related-movie-card'}>
                   <CardMedia
                     component={'img'}
